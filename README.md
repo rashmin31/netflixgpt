@@ -6,6 +6,7 @@
 - Firebase
     - Signup/Sign using Firebase
 - Redux Toolkit
+- TMDB API
 
 #Features:
 - Login/Sign up

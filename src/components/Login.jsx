@@ -3,9 +3,9 @@ import Header from "./Header";
 import { validateData } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMAGE, BG_IMAGE_SET } from "../utils/constants";
 
 
 const Login = () => {
@@ -17,11 +17,9 @@ const Login = () => {
   const fullName = useRef(null)
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     const message = validateData(email.current.value, password.current.value);
-    console.log("message: ", message)
     setErrorMessage(message)
     if(message) return;
 
@@ -35,7 +33,6 @@ const Login = () => {
           .then(() => {
             const {uid, email, displayName} = auth
             dispatch(addUser({uid: uid, email: email, displayName: displayName}));
-            navigate("/browse")
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -53,8 +50,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log(user)
-          navigate("/browse")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -73,9 +68,9 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_large.jpg"
+          src={BG_IMAGE}
           alt="Bg Image"
-          srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_large.jpg 1800w"
+          srcSet={BG_IMAGE_SET}
         />
       </div>
       <form className="w-4/12 absolute bg-black mt-36 p-12 mx-auto right-0 left-0 text-white bg-opacity-80"

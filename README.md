@@ -2,6 +2,7 @@
 
 - Vite + React
 - configured TailwindCSS
+- React Router 
 
 #Features:
 - Login/Sign up

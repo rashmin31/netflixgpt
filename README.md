@@ -3,6 +3,9 @@
 - Vite + React
 - configured TailwindCSS
 - React Router 
+- Firebase
+    - Signup/Sign using Firebase
+- Redux Toolkit
 
 #Features:
 - Login/Sign up

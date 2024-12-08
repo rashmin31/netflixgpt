@@ -1,5 +1,6 @@
 import MovieCard from "./MovieCard"
 import PropTypes from "prop-types";
+
 const MovieList = ({genre, movies}) => {
   return (
     <div className="px-6">

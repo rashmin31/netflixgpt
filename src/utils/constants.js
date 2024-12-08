@@ -10,12 +10,16 @@ export const BG_IMAGE =
 export const BG_IMAGE_SET =
   "https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_large.jpg 1800w";
 
+const TMDN_KEY = import.meta.env.VITE_REACT_APP_TMDB_KEY;
+
+const OPENAI_KEY = import.meta.env.VITE_REACT_APP_OPENAI_KEY;
+
 export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNTU1M2MxMGM0MDhhZGExYjY4MGYyMTIwNTZiMTAwNCIsIm5iZiI6MTczMzU5NDM0OS42NTI5OTk5LCJzdWIiOiI2NzU0OGNlZDhlMDMzZTkxMzZkY2I2NGUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.7HwF4vlNFbKlGKewfavPGnD0m00HVioiTRR9pwFeYHI",
+      "Bearer " + TMDN_KEY,
   },
 };
 
@@ -36,3 +40,5 @@ export const SUPPORTED_LANGUAGES = [{
   identifier: "spanish",
   name: "Spanish"
 }]
+
+export const OPEN_AI_KEY = OPENAI_KEY

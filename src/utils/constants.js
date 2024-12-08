@@ -20,3 +20,5 @@ export const API_OPTIONS = {
 };
 
 export const YOUTUBE_EMBED = "https://www.youtube.com/embed/";
+
+export const IMG_CDN = "https://image.tmdb.org/t/p/w780"

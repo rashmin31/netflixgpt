@@ -22,3 +22,17 @@ export const API_OPTIONS = {
 export const YOUTUBE_EMBED = "https://www.youtube.com/embed/";
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w780"
+
+
+export const SUPPORTED_LANGUAGES = [{
+  identifier: "en",
+  name: "English"
+},
+{
+  identifier: "hindi",
+  name: "Hindi"
+},
+{
+  identifier: "spanish",
+  name: "Spanish"
+}]
